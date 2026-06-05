@@ -54,6 +54,7 @@ platform :ios do
   desc "Build Trio"
   lane :build_trio do
     setup_ci if ENV['CI']
+    ENV["MATCH_READONLY"] = false.to_s
     BUNDLE_ID = ENV["BUNDLE_ID"]
 
     update_project_team(
